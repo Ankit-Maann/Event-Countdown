@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Live countdown to the upcoming event."
+    >
+
+    <title>Event Countdown</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Background Decorations -->
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+
+        <main class="countdown-card">
+
+            <!-- Header -->
+            <div class="event-icon" id="eventIcon">
+                🪔
+            </div>
+
+            <p class="eyebrow">
+                COUNTDOWN
+            </p>
+
+            <h1 id="eventName">
+                Diwali
+            </h1>
+
+            <p class="event-description" id="eventDescription">
+                The Festival of Lights is almost here!
+            </p>
+
+            <!-- View Switcher -->
+            <div class="view-switcher">
+
+                <button
+                    class="view-btn active"
+                    id="timeViewBtn"
+                    type="button"
+                >
+                    <span>⏱</span>
+                    Time
+                </button>
+
+                <button
+                    class="view-btn"
+                    id="daysViewBtn"
+                    type="button"
+                >
+                    <span>📅</span>
+                    Days
+                </button>
+
+            </div>
+
+
+            <!-- TIME COUNTDOWN -->
+
+            <section
+                class="countdown"
+                id="timeCountdown"
+            >
+
+                <div class="time-box">
+                    <strong id="days">00</strong>
+                    <span>Days</span>
+                </div>
+
+                <div class="separator">:</div>
+
+                <div class="time-box">
+                    <strong id="hours">00</strong>
+                    <span>Hours</span>
+                </div>
+
+                <div class="separator">:</div>
+
+                <div class="time-box">
+                    <strong id="minutes">00</strong>
+                    <span>Minutes</span>
+                </div>
+
+                <div class="separator">:</div>
+
+                <div class="time-box">
+                    <strong id="seconds">00</strong>
+                    <span>Seconds</span>
+                </div>
+
+            </section>
+
+
+            <!-- DAYS COUNTDOWN -->
+
+            <section
+                class="days-countdown hidden"
+                id="daysCountdown"
+            >
+
+                <strong id="totalDays">
+                    00
+                </strong>
+
+                <span>
+                    Days Remaining
+                </span>
+
+            </section>
+
+
+            <!-- Event Date -->
+
+            <div class="event-date">
+
+                <span>Event Date</span>
+
+                <strong id="formattedDate">
+                    Loading...
+                </strong>
+
+            </div>
+
+
+            <!-- Footer -->
+
+            <p class="footer-text">
+                Time is ticking... ⏳
+            </p>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
