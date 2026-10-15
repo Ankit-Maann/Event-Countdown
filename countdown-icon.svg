@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#07132f"/>
+    <stop offset="1" stop-color="#020617"/>
+  </linearGradient>
+  <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#16d9ff"/>
+    <stop offset=".48" stop-color="#9b4dff"/>
+    <stop offset="1" stop-color="#ff7a45"/>
+  </linearGradient>
+  <linearGradient id="cal" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#22d3ee"/>
+    <stop offset=".55" stop-color="#6366f1"/>
+    <stop offset="1" stop-color="#ffb347"/>
+  </linearGradient>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="7" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+
+<rect width="512" height="512" rx="92" fill="url(#bg)"/>
+
+<!-- stopwatch crown -->
+<rect x="224" y="63" width="96" height="38" rx="19" fill="#18cfff" filter="url(#glow)"/>
+
+<!-- glowing clock ring -->
+<circle cx="255" cy="257" r="142"
+        fill="none" stroke="#172554" stroke-width="38"/>
+<path d="M255 115 A142 142 0 1 1 113 257"
+      fill="none" stroke="url(#ring)" stroke-width="38"
+      stroke-linecap="round" filter="url(#glow)"/>
+
+<!-- clock face -->
+<circle cx="255" cy="257" r="108" fill="#050d24"/>
+
+<!-- clock marks -->
+<g fill="#eaf4ff">
+  <rect x="248" y="151" width="14" height="34" rx="7"/>
+  <rect x="248" y="329" width="14" height="34" rx="7"/>
+  <rect x="149" y="250" width="34" height="14" rx="7"/>
+  <rect x="327" y="250" width="34" height="14" rx="7"/>
+</g>
+
+<!-- hands -->
+<path d="M255 257 L255 190" stroke="#f8fbff" stroke-width="14" stroke-linecap="round"/>
+<path d="M255 257 L322 221" stroke="#f8fbff" stroke-width="14" stroke-linecap="round"/>
+<circle cx="255" cy="257" r="20" fill="#f8fbff"/>
+
+<!-- calendar -->
+<rect x="292" y="302" width="145" height="116" rx="24"
+      fill="#101b45" stroke="url(#cal)" stroke-width="10"
+      filter="url(#glow)"/>
+<rect x="292" y="302" width="145" height="34" rx="20" fill="url(#cal)"/>
+<rect x="316" y="286" width="18" height="38" rx="9" fill="#2d8cff"/>
+<rect x="395" y="286" width="18" height="38" rx="9" fill="#2d8cff"/>
+
+<g fill="url(#cal)">
+  <rect x="318" y="354" width="20" height="20" rx="5"/>
+  <rect x="354" y="354" width="20" height="20" rx="5"/>
+  <rect x="390" y="354" width="20" height="20" rx="5"/>
+  <rect x="318" y="385" width="20" height="20" rx="5"/>
+  <rect x="354" y="385" width="20" height="20" rx="5"/>
+  <rect x="390" y="385" width="20" height="20" rx="5"/>
+</g>
+
+<!-- sparkles -->
+<path d="M410 104 l8 19 19 8-19 8-8 19-8-19-19-8 19-8z" fill="#ffd45c"/>
+<path d="M92 360 l7 16 16 7-16 7-7 16-7-16-16-7 16-7z" fill="#39b9ff"/>
+</svg>

@@ -1,47 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
-        name="description"
-        content="Live countdown to the upcoming event."
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
     >
+
+<!-- SEO -->
+<meta
+    name="description"
+    content="Create beautiful countdowns for holidays, festivals, birthdays, exams, trips and special events."
+>
+
+<meta
+    name="keywords"
+    content="countdown, event countdown, holiday countdown, festival countdown, birthday countdown, countdown timer"
+>
+
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Event Countdown — Your Events, Your Countdown">
+<meta
+    property="og:description"
+    content="Create and share beautiful countdowns for your special events."
+>
+<meta property="og:site_name" content="Event Countdown">
+<meta property="og:image" content="./icon-512.png">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Event Countdown">
+<meta
+    name="twitter:description"
+    content="Create and share beautiful countdowns for your special events."
+>
+<meta name="twitter:image" content="./icon-512.png">
+
+<!-- Mobile -->
+<meta name="theme-color" content="#0f172a">
+<meta name="color-scheme" content="dark light">
+
 
     <title>Event Countdown</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="./countdown-icon.svg"
+>
+
+<link
+    rel="apple-touch-icon"
+    href="./icon-192.png"
+>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <div class="page">
+    <!-- =========================================
+         BACKGROUND EFFECTS
+    ========================================== -->
 
-        <!-- Background Decorations -->
+    <div class="background-effects">
+
         <div class="glow glow-one"></div>
+
         <div class="glow glow-two"></div>
 
-        <main class="countdown-card">
+        <div
+            class="particles"
+            id="particles"
+        ></div>
 
-            <!-- Header -->
-            <div class="event-icon" id="eventIcon">
+    </div>
+
+
+    <!-- =========================================
+         TOP CONTROLS
+    ========================================== -->
+
+    <div class="top-actions">
+
+        <button
+            class="icon-btn"
+            id="themeBtn"
+            type="button"
+            aria-label="Toggle theme"
+        >
+            🌙
+        </button>
+
+
+        <button
+            class="icon-btn hidden"
+            id="installBtn"
+            type="button"
+            aria-label="Install app"
+        >
+            📲
+        </button>
+
+    </div>
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="main-container">
+
+
+        <!-- =====================================
+             COUNTDOWN CARD
+        ====================================== -->
+
+        <section class="countdown-card">
+
+
+            <!-- EVENT ICON -->
+
+            <div
+                class="event-icon"
+                id="eventIcon"
+            >
                 🪔
             </div>
+
 
             <p class="eyebrow">
                 COUNTDOWN
             </p>
 
+
+            <!-- NEXT EVENT BADGE -->
+
+            <div
+                class="next-event-badge hidden"
+                id="nextEventBadge"
+            >
+                ⭐ NEXT EVENT
+            </div>
+
+
             <h1 id="eventName">
-                Diwali
+                Diwali Holidays
             </h1>
 
-            <p class="event-description" id="eventDescription">
-                The Festival of Lights is almost here!
+
+            <p
+                class="event-description"
+                id="eventDescription"
+            >
+                Diwali Holidays are almost here! 🎉
             </p>
 
-            <!-- View Switcher -->
+
+            <!-- =================================
+                 VIEW SWITCHER
+            ================================== -->
+
             <div class="view-switcher">
 
                 <button
@@ -49,63 +183,108 @@
                     id="timeViewBtn"
                     type="button"
                 >
-                    <span>⏱</span>
-                    Time
+                    ⏱ Time
                 </button>
+
 
                 <button
                     class="view-btn"
                     id="daysViewBtn"
                     type="button"
                 >
-                    <span>📅</span>
-                    Days
+                    📅 Days
                 </button>
 
             </div>
 
 
-            <!-- TIME COUNTDOWN -->
+            <!-- =================================
+                 TIME COUNTDOWN
+            ================================== -->
 
             <section
                 class="countdown"
                 id="timeCountdown"
+                aria-label="Time remaining"
             >
 
                 <div class="time-box">
-                    <strong id="days">00</strong>
-                    <span>Days</span>
+
+                    <strong id="days">
+                        00
+                    </strong>
+
+                    <span>
+                        Days
+                    </span>
+
                 </div>
 
-                <div class="separator">:</div>
 
-                <div class="time-box">
-                    <strong id="hours">00</strong>
-                    <span>Hours</span>
+                <div class="separator">
+                    :
                 </div>
 
-                <div class="separator">:</div>
 
                 <div class="time-box">
-                    <strong id="minutes">00</strong>
-                    <span>Minutes</span>
+
+                    <strong id="hours">
+                        00
+                    </strong>
+
+                    <span>
+                        Hours
+                    </span>
+
                 </div>
 
-                <div class="separator">:</div>
+
+                <div class="separator">
+                    :
+                </div>
+
 
                 <div class="time-box">
-                    <strong id="seconds">00</strong>
-                    <span>Seconds</span>
+
+                    <strong id="minutes">
+                        00
+                    </strong>
+
+                    <span>
+                        Minutes
+                    </span>
+
+                </div>
+
+
+                <div class="separator">
+                    :
+                </div>
+
+
+                <div class="time-box">
+
+                    <strong id="seconds">
+                        00
+                    </strong>
+
+                    <span>
+                        Seconds
+                    </span>
+
                 </div>
 
             </section>
 
 
-            <!-- DAYS COUNTDOWN -->
+            <!-- =================================
+                 DAYS COUNTDOWN
+            ================================== -->
 
             <section
                 class="days-countdown hidden"
                 id="daysCountdown"
+                aria-label="Days remaining"
             >
 
                 <strong id="totalDays">
@@ -119,11 +298,15 @@
             </section>
 
 
-            <!-- Event Date -->
+            <!-- =================================
+                 EVENT DATE
+            ================================== -->
 
             <div class="event-date">
 
-                <span>Event Date</span>
+                <span>
+                    Event Date
+                </span>
 
                 <strong id="formattedDate">
                     Loading...
@@ -132,17 +315,642 @@
             </div>
 
 
-            <!-- Footer -->
+            <!-- =================================
+                 ACTIONS
+            ================================== -->
+
+            <div class="event-actions">
+                <button  id="reminderBtn"   class="event-action"   type="button"    aria-label="Set reminder" >
+    🔔 Set Reminder
+</button>
+
+                <button
+                    class="action-btn"
+                    id="shareBtn"
+                    type="button"
+                >
+                    🔗 Share
+                </button>
+
+
+                <button
+                    class="action-btn"
+                    id="calendarBtn"
+                    type="button"
+                >
+                    📅 Calendar
+                </button>
+
+
+            </div>
+
+
+            <p
+                class="share-message"
+                id="shareMessage"
+                aria-live="polite"
+            ></p>
+
 
             <p class="footer-text">
                 Time is ticking... ⏳
             </p>
 
-        </main>
+        </section>
+
+
+        <!-- =====================================
+             PREMIUM PLATFORM TOOLS
+        ====================================== -->
+
+        <section class="platform-tools" id="platformTools">
+            <div class="section-heading">
+                <span class="eyebrow">YOUR COUNTDOWN HUB</span>
+                <h2>Make Every Moment Count</h2>
+                <p>Share, personalize and manage your countdowns in one place.</p>
+            </div>
+
+            <div class="tool-grid">
+                <button class="tool-card" type="button" data-tool="share">
+                    <span class="tool-icon">↗️</span>
+                    <span><strong>Share</strong><small>Send your countdown anywhere</small></span>
+                </button>
+                <button class="tool-card" type="button" data-tool="studio">
+                    <span class="tool-icon">🎨</span>
+                    <span><strong>Appearance Studio</strong><small>Personalize your countdown look</small></span>
+                </button>
+                <button class="tool-card" type="button" data-tool="history">
+                    <span class="tool-icon">🗂️</span>
+                    <span><strong>My Countdown</strong><small>Manage saved events</small></span>
+                </button>
+                <button class="tool-card" type="button" data-tool="timezone">
+                    <span class="tool-icon">🌍</span>
+                    <span><strong>Time Zone</strong><small>See local event timing</small></span>
+                </button>
+            </div>
+        </section>
+
+
+<!-- =========================================
+     CREATE YOUR COUNTDOWN
+========================================= -->
+
+<section class="create-section" id="createCountdown">
+
+    <div class="section-heading">
+        <span class="eyebrow">MAKE IT YOURS</span>
+
+        <h2>Create Your Countdown</h2>
+
+        <p>
+            Create a personalized countdown for any special event.
+        </p>
+    </div>
+
+
+    <div class="create-card">
+
+        <form id="createCountdownForm">
+
+            <!-- Event Name -->
+
+            <div class="form-group">
+
+                <label for="customEventName">
+                    Event Name
+                </label>
+
+                <input
+                    id="customEventName"
+                    type="text"
+                    placeholder="Birthday, Exam, Trip..."
+                    maxlength="60"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Date + Time -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="customEventDate">
+                        Date
+                    </label>
+
+                    <input
+                        id="customEventDate"
+                        type="date"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customEventTime">
+                        Time
+                    </label>
+
+                    <input
+                        id="customEventTime"
+                        type="time"
+                        value="00:00"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Emoji -->
+
+            <div class="form-group">
+
+                <label for="customEventEmoji">
+                    Event Emoji
+                </label>
+
+                <div class="emoji-input">
+
+                    <input
+                        id="customEventEmoji"
+                        type="text"
+                        value="🎉"
+                        maxlength="2"
+                        placeholder="🎉"
+                    >
+
+                    <span id="emojiPreview">
+                        🎉
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row advanced-custom-row">
+                <div class="form-group">
+                    <label for="customAccent">Accent Color</label>
+                    <div class="color-input-wrap">
+                        <input id="customAccent" type="color" value="#22d3ee" aria-label="Countdown accent color">
+                        <span id="customAccentValue">#22D3EE</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="customDescription">Short Message</label>
+                    <input id="customDescription" type="text" maxlength="120" placeholder="Something special is coming...">
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Choose a Theme
+                </label>
+
+                <div
+                    class="theme-options"
+
+                    <button
+                        type="button"
+                        class="theme-option active"
+                        data-theme="default"
+                    >
+                        <span>✨</span>
+                        <small>Classic</small>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="theme-option"
+                        data-theme="diwali"
+                    >
+                        <span>🪔</span>
+                        <small>Diwali</small>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="theme-option"
+                        data-theme="christmas"
+                    >
+                        <span>🎄</span>
+                        <small>Christmas</small>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="theme-option"
+                        data-theme="holi"
+                    >
+                        <span>🎨</span>
+                        <small>Holi</small>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="theme-option"
+                        data-theme="newyear"
+                    >
+                        <span>🎆</span>
+                        <small>New Year</small>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Create -->
+
+            <button
+                id="createCountdownBtn"
+                class="create-countdown-btn"
+                type="submit"
+            >
+                <span>✨</span>
+                Create My Countdown
+            </button>
+
+        </form>
+
+
+        <!-- Form status -->
+
+        <p
+            id="createCountdownStatus"
+            class="create-status"
+            aria-live="polite"
+        ></p>
 
     </div>
+
+</section>
+
+<!-- MY COUNTDOWNS -->
+
+<section class="my-countdowns-section hidden" id="myCountdowns">
+
+    <div class="section-heading">
+        <span class="eyebrow">YOUR EVENTS</span>
+        <h2>My Countdowns</h2>
+        <p>Your personalized countdowns are saved here.</p>
+    </div>
+
+    <div id="myCountdownsList" class="my-countdowns-list"></div>
+
+</section>
+
+
+        <!-- =========================================
+             UPCOMING EVENTS
+        ========================================== -->
+
+        <section class="upcoming-section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    WHAT'S NEXT
+                </p>
+
+                <h2>
+                    Upcoming Events
+                </h2>
+
+                <p>
+                    Never miss an important day.
+                </p>
+
+            </div>
+
+
+            <div
+                class="events-grid"
+                id="eventsGrid"
+            ></div>
+
+        </section>
+      <div
+    id="reminderModal"
+    class="modal hidden"
+    aria-hidden="true"
+>
+    <div class="modal-content">
+
+        <button
+            id="reminderClose"
+            class="modal-close"
+            type="button"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+        <div class="modal-icon">🔔</div>
+
+        <h2>Set Reminder</h2>
+
+        <p id="reminderEventName">
+            Get notified before the event starts.
+        </p>
+
+        <div class="reminder-options">
+
+            <button
+                class="reminder-option"
+                data-reminder="1440"
+                type="button"
+            >
+                <strong>1 Day Before</strong>
+                <span>24 hours before</span>
+            </button>
+
+            <button
+                class="reminder-option"
+                data-reminder="60"
+                type="button"
+            >
+                <strong>1 Hour Before</strong>
+                <span>60 minutes before</span>
+            </button>
+
+            <button
+                class="reminder-option"
+                data-reminder="10"
+                type="button"
+            >
+                <strong>10 Minutes Before</strong>
+                <span>10 minutes before</span>
+            </button>
+
+        </div>
+
+        <p
+            id="reminderStatus"
+            class="reminder-status"
+            aria-live="polite"
+        ></p>
+
+    </div>
+</div>
+
+
+    </main>
+
+
+    <!-- =========================================
+         SHARE CENTER
+    ========================================== -->
+    <div class="modal hidden" id="shareModal" role="dialog" aria-modal="true" aria-labelledby="shareModalTitle">
+        <div class="modal-content share-modal-content">
+            <button class="modal-close" id="shareModalClose" type="button" aria-label="Close share center">×</button>
+            <div class="modal-icon">↗️</div>
+            <p class="eyebrow">SHARE THE MOMENT</p>
+            <h2 id="shareModalTitle">Share Countdown</h2>
+            <p id="shareModalText" class="modal-subtitle">Send this countdown to your friends.</p>
+            <div class="share-preview" id="sharePreview"></div>
+            <div class="share-grid">
+                <button class="share-option" data-share="native" type="button"><span>📤</span><strong>Share</strong><small>Device share</small></button>
+                <button class="share-option" data-share="copy" type="button"><span>🔗</span><strong>Copy Link</strong><small>Clipboard</small></button>
+                <button class="share-option" data-share="whatsapp" type="button"><span>💬</span><strong>WhatsApp</strong><small>Send message</small></button>
+                <button class="share-option" data-share="telegram" type="button"><span>✈️</span><strong>Telegram</strong><small>Send message</small></button>
+                <button class="share-option" data-share="facebook" type="button"><span>📘</span><strong>Facebook</strong><small>Share link</small></button>
+                <button class="share-option" data-share="calendar" type="button"><span>📅</span><strong>Calendar</strong><small>Download .ics</small></button>
+            </div>
+            <div class="share-link-row">
+                <input id="shareLinkInput" type="text" readonly aria-label="Countdown share link">
+                <button id="shareCopyBtn" type="button">Copy</button>
+            </div>
+            <p class="share-status" id="shareCenterStatus" aria-live="polite"></p>
+        </div>
+    </div>
+
+    <!-- =========================================
+         APPEARANCE STUDIO
+    ========================================== -->
+    <div class="modal hidden" id="studioModal" role="dialog" aria-modal="true" aria-labelledby="studioTitle">
+        <div class="modal-content studio-modal-content">
+            <button class="modal-close" id="studioClose" type="button" aria-label="Close appearance studio">×</button>
+            <div class="modal-icon">🎨</div>
+            <p class="eyebrow">PREMIUM CUSTOMIZATION</p>
+            <h2 id="studioTitle">Appearance Studio</h2>
+            <p class="modal-subtitle">Tune the current countdown without changing its event data.</p>
+            <div class="studio-section-title">
+                <span>Background</span>
+                <small>Make the entire page yours</small>
+            </div>
+
+            <div class="studio-group">
+                <label>Gradient presets</label>
+                <div class="studio-preset-grid" id="studioPresets">
+                    <button type="button" class="studio-preset active" data-preset="aurora"><span class="preset-swatch swatch-aurora"></span><strong>Aurora</strong></button>
+                    <button type="button" class="studio-preset" data-preset="sunset"><span class="preset-swatch swatch-sunset"></span><strong>Sunset</strong></button>
+                    <button type="button" class="studio-preset" data-preset="ocean"><span class="preset-swatch swatch-ocean"></span><strong>Ocean</strong></button>
+                    <button type="button" class="studio-preset" data-preset="candy"><span class="preset-swatch swatch-candy"></span><strong>Candy</strong></button>
+                    <button type="button" class="studio-preset" data-preset="midnight"><span class="preset-swatch swatch-midnight"></span><strong>Midnight</strong></button>
+                    <button type="button" class="studio-preset" data-preset="forest"><span class="preset-swatch swatch-forest"></span><strong>Forest</strong></button>
+                    <button type="button" class="studio-preset" data-preset="custom"><span class="preset-swatch swatch-custom"></span><strong>Custom</strong></button>
+                </div>
+            </div>
+
+            <div class="studio-group">
+                <label>Gradient type</label>
+                <div class="studio-pills" id="studioGradientType">
+                    <button type="button" data-gradient="linear" class="active">Linear</button>
+                    <button type="button" data-gradient="radial">Radial</button>
+                </div>
+            </div>
+
+            <div class="studio-color-grid">
+                <label class="studio-color-control">
+                    <span>Color 1</span>
+                    <input id="studioBgColor1" type="color" value="#0f172a" aria-label="Background color one">
+                </label>
+                <label class="studio-color-control">
+                    <span>Color 2</span>
+                    <input id="studioBgColor2" type="color" value="#312e81" aria-label="Background color two">
+                </label>
+                <label class="studio-color-control">
+                    <span>Color 3</span>
+                    <input id="studioBgColor3" type="color" value="#22d3ee" aria-label="Background color three">
+                </label>
+            </div>
+
+            <div class="studio-group studio-angle-group">
+                <div class="studio-range-head"><label for="studioAngle">Gradient angle</label><output id="studioAngleValue">120°</output></div>
+                <input id="studioAngle" type="range" min="0" max="360" value="120">
+            </div>
+
+            <div class="studio-preview" id="studioPreview">
+                <span>LIVE PREVIEW</span>
+                <strong>Your background</strong>
+            </div>
+
+            <div class="studio-group">
+                <label>Gradient animation</label>
+                <div class="studio-pills" id="studioGradientAnimation">
+                    <button type="button" data-animation="on" class="active">On</button>
+                    <button type="button" data-animation="off">Off</button>
+                </div>
+            </div>
+
+            <div class="studio-group">
+                <label>Animation speed</label>
+                <div class="studio-pills" id="studioGradientSpeed">
+                    <button type="button" data-speed="slow">Slow</button>
+                    <button type="button" data-speed="normal" class="active">Normal</button>
+                    <button type="button" data-speed="fast">Fast</button>
+                </div>
+            </div>
+
+            <div class="studio-divider"></div>
+
+            <div class="studio-section-title">
+                <span>Interface</span>
+                <small>Fine-tune the countdown itself</small>
+            </div>
+
+            <div class="studio-group">
+                <label for="studioAccent">Accent</label>
+                <div class="color-input-wrap"><input id="studioAccent" type="color" value="#22d3ee"><span id="studioAccentValue">#22D3EE</span></div>
+            </div>
+            <div class="studio-group">
+                <label>Display density</label>
+                <div class="studio-pills" id="studioDensity">
+                    <button type="button" data-density="comfortable" class="active">Comfortable</button>
+                    <button type="button" data-density="compact">Compact</button>
+                </div>
+            </div>
+            <div class="studio-group">
+                <label>Background glow</label>
+                <div class="studio-pills" id="studioGlow">
+                    <button type="button" data-glow="on" class="active">On</button>
+                    <button type="button" data-glow="off">Off</button>
+                </div>
+            </div>
+            <div class="studio-actions"><button id="studioReset" class="action-btn" type="button">Reset Appearance</button><button id="studioDone" class="create-countdown-btn" type="button">Save & Done</button></div>
+        </div>
+    </div>
+
+    <!-- =========================================
+         TIMEZONE DETAILS
+    ========================================== -->
+    <div class="modal hidden" id="timezoneModal" role="dialog" aria-modal="true" aria-labelledby="timezoneTitle">
+        <div class="modal-content timezone-modal-content">
+            <button class="modal-close" id="timezoneClose" type="button" aria-label="Close timezone details">×</button>
+            <div class="modal-icon">🌍</div>
+            <p class="eyebrow">TIME AWARE</p>
+            <h2 id="timezoneTitle">Event Time Zone</h2>
+            <p id="timezoneEventName"></p>
+            <div class="timezone-cards"><div><span>Your time zone</span><strong id="userTimezone"></strong></div><div><span>Event time</span><strong id="eventTimezoneDate"></strong></div></div>
+            <p class="modal-note">Shared countdown links use the recipient's local clock for the event time. This keeps the countdown useful across devices and countries.</p>
+        </div>
+    </div>
+
+    <!-- =========================================
+         CELEBRATION
+    ========================================== -->
+
+    <div
+        class="celebration hidden"
+        id="celebration"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="celebrationTitle"
+    >
+
+        <div class="celebration-content">
+
+            <div class="celebration-icon">
+                🎉
+            </div>
+
+
+            <p class="eyebrow">
+                THE WAIT IS OVER
+            </p>
+
+
+            <h2 id="celebrationTitle">
+                Diwali Holidays
+            </h2>
+
+
+            <p id="celebrationText">
+                Your holidays have started!
+            </p>
+
+
+            <button
+                class="celebration-close"
+                id="celebrationClose"
+                type="button"
+            >
+                Let's Celebrate 🎊
+            </button>
+
+        </div>
+
+    </div>
+    <script>
+    /* =========================================
+       SERVICE WORKER REGISTRATION
+    ========================================= */
+
+    if ("serviceWorker" in navigator) {
+
+        window.addEventListener("load", () => {
+
+            navigator.serviceWorker
+                .register("./service-worker.js")
+                .then((registration) => {
+
+                    console.log(
+                        "Service Worker registered:",
+                        registration.scope
+                    );
+
+                    /*
+                       Check for updates whenever
+                       the page is opened.
+                    */
+                    registration.update();
+
+                })
+                .catch((error) => {
+
+                    console.error(
+                        "Service Worker registration failed:",
+                        error
+                    );
+
+                });
+
+        });
+
+    }
+</script>
+
+
+    <!-- =========================================
+         SCRIPT
+    ========================================== -->
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
